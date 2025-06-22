@@ -61,19 +61,26 @@ const Todo=()=>{
             </button>
            </div>
 
-           <div  className="flex justify-center">
+           <div  className="flex justify-center mt-4">
             {/* display the todo list */}
+            <div>
             {todoList.map((item)=>
             <div key={item.id}
-            className="flex"
+            className="flex m-2 justify-between "
             >
-               <p >{item.name}</p>
+               <p className="mt-2">{item.name}</p>
                <button
-               onClick={()=>deleteTodo(item.id)}
-               >❌</button>
+               className="bg-red-600 py-2 px-1 ml-2 text-black shadow-2xl rounded"
+               onClick={()=>
+                {   if(confirm("deleting todo"))
+                    deleteTodo(item.id
+
+                    )}}
+               >Delete</button>
             </div>
             
             )}
+            </div>
            </div>
         </div>
     );
